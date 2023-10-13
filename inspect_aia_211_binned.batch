@@ -1,0 +1,11 @@
+!PATH = Expand_Path('+/data1/tomography/SolarTom_idl') + ':' + !PATH
+.r inspect_euv_data
+.r inspect_euv_data
+
+base_dir = '/media/Data1'
+data_dir = '/data1/tomography/DATA/aia/CR2099_new/211/'
+listfile = 'list.211.processed.selected.binned'
+
+imagecheck,datadir=data_dir,listfile=listfile,instrument='aia' ,band=211,/select,/panel,/zbuff,base_dir=base_dir,/record_gif
+
+

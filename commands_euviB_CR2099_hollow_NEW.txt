@@ -1,0 +1,126 @@
+
+e buildA_params.h
+editar en Sección EUVIBUILD:
+-------------------------------------------------------------------------------------
+Rmin, Rmax, DRAD, NRAD =      1.00000      1.30000    0.0100000      30
+INST_RMAX              =      1.25000
+INNER_REJECT_RAD       =      0.00000
+OUTER_REJECT_RAD       =      1.02000
+NTHETA, DTHETA         =      90      2.00000
+BF                     =       4
+--------------------------------------------------------------------------------------
+#define DATADIR    TOMROOT "DATA/euvi/CR2099_new/B???/"
+#define CONFSTRING DATADIR "list.B???.tom"
+#define A_OUTFILE "euviB.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4"
+#define A_OUTFILE "euviB.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4"
+#define A_OUTFILE "euviB.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4"
+
+e solve_cv_params.h
+editar
+#define FILESTR1 "r3_30_90_180
+
+make clean
+make builda
+make callsolve_cg
+make auto_cv_brent
+cp builda ba_euviB.171.cr2099_hollow_new
+cp callsolve_cg cs_euviB.171.cr2099_hollow_new
+cp auto_cv_brent autocv_euviB.171.cr2099_hollow_new
+
+make clean
+make builda
+make callsolve_cg
+make auto_cv_brent
+cp builda ba_euviB.195.cr2099_hollow_new
+cp callsolve_cg cs_euviB.195.cr2099_hollow_new
+cp auto_cv_brent autocv_euviB.195.cr2099_hollow_new
+
+make clean
+make builda
+make callsolve_cg
+make auto_cv_brent
+cp builda ba_euviB.284.cr2099_hollow_new
+cp callsolve_cg cs_euviB.284.cr2099_hollow_new
+cp auto_cv_brent autocv_euviB.284.cr2099_hollow_new
+
+nohup ./ba_euviB.171.cr2099_hollow_new > termout_bA_euviB.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 2>&1 &
+nohup ./ba_euviB.195.cr2099_hollow_new > termout_bA_euviB.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 2>&1 &
+nohup ./ba_euviB.284.cr2099_hollow_new > termout_bA_euviB.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 2>&1 &
+
+nohup ./cs_euviB.171.cr2099_hollow_new x_zero_30_90_180 x_euviB.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 euviB.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 1.0 > termout_cs_euviB.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 2>&1 &
+nohup ./cs_euviB.195.cr2099_hollow_new x_zero_30_90_180 x_euviB.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 euviB.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 1.0 > termout_cs_euviB.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 2>&1 &
+nohup ./cs_euviB.284.cr2099_hollow_new x_zero_30_90_180 x_euviB.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 euviB.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 1.0 > termout_cs_euviB.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 2>&1 &
+
+cd /media/Data1/data1/tomography/bindata/
+cp x_euviB.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 x_euviB.171.cr2099_hollow_new_acv
+cd /data1/tomography/SolarTom_GRUPO_torre1/
+
+cd /media/Data1/data1/tomography/bindata/
+cp x_euviB.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 x_euviB.195.cr2099_hollow_new_acv
+cd /data1/tomography/SolarTom_GRUPO_torre1/
+
+cd /media/Data1/data1/tomography/bindata/
+cp x_euviB.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 x_euviB.284.cr2099_hollow_new_acv
+cd /data1/tomography/SolarTom_GRUPO_torre1/
+
+nohup ./autocv_euviB.171.cr2099_hollow_new -r5 -w1 -m euviB.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 -i x_euviB.171.cr2099_hollow_new_acv -o x_euviB.171.cr2099_hollow_new_acv > termout_acv_euviB.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 2>&1 &
+nohup ./autocv_euviB.195.cr2099_hollow_new -r5 -w1 -m euviB.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 -i x_euviB.195.cr2099_hollow_new_acv -o x_euviB.195.cr2099_hollow_new_acv > termout_acv_euviB.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 2>&1 &
+nohup ./autocv_euviB.284.cr2099_hollow_new -r5 -w1 -m euviB.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 -i x_euviB.284.cr2099_hollow_new_acv -o x_euviB.284.cr2099_hollow_new_acv > termout_acv_euviB.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 2>&1 &
+
+grep "function" termout_acv_euviB.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4
+grep "function" termout_acv_euviB.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4
+grep "function" termout_acv_euviB.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4
+
+v_171 = [5.60769, 0.570996, 0.267651, 0.416872, 0.641001, 0.408679, 0.152224, 0.255399, 0.373015, 0.438858, 0.298634]
+v_195 = [1.29263, 0.58483, 0.209711, 0.155967, 1.82959, 0.304738, 0.126428, 0.134544, 0.215642, 0.316776, 0.203767]
+v_284 = [6.8995, 1.4222, 0.0915219, 0.157918, 0.698784, 0.445252, 0.284028, 0.214111, 0.286529, 0.434342, 0.101807]
+
+-------------------------------------------------------------------------------------------------------------------------
+
+# Calculo p_opt usando la MEDIAN
+IDL> print,median(v_171)
+     0.408679
+IDL> print,median(v_195)
+     0.215642
+IDL> print,median(v_284)
+     0.286529
+171 A : p_opt = 0.41
+195 A : P_opt = 0.22
+284 A : P_opt = 0.29
+
+nohup ./cs_euviB.171.cr2099_hollow_new x_euviB.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 x_euviB.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.41 euviB.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 0.41 > termout_cs_euviB.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.41 2>&1 &
+nohup ./cs_euviB.195.cr2099_hollow_new x_euviB.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 x_euviB.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.22 euviB.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 0.22 > termout_cs_euviB.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.22 2>&1 &
+nohup ./cs_euviB.284.cr2099_hollow_new x_euviB.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 x_euviB.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.29 euviB.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 0.29 > termout_cs_euviB.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.29 2>&1 &
+
+--------------------------------------------------------------------------------------------------------------------------
+
+# Calculo p_opt usando MEAN
+
+P_crit = 2.0
+i_171 = where(v_171 lt p_crit)
+i_195 = where(v_195 lt p_crit)
+i_284 = where(v_284 lt p_crit)
+IDL> print,mean(v_171(i_171))
+     0.382333
+IDL> print,mean(v_195(i_195))
+     0.488602
+IDL> print,mean(v_284(i_284))
+     0.413649
+171 A : p_opt = 0.38
+195 A : P_opt = 0.49
+284 A : P_opt = 0.41
+
+nohup ./cs_euviB.171.cr2099_hollow_new x_euviB.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 x_euviB.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.38 euviB.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 0.38 > termout_cs_euviB.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.38 2>&1 &
+nohup ./cs_euviB.195.cr2099_hollow_new x_euviB.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 x_euviB.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.49 euviB.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 0.49 > termout_cs_euviB.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.49 2>&1 &
+nohup ./cs_euviB.284.cr2099_hollow_new x_euviB.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 x_euviB.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.41 euviB.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 0.41 > termout_cs_euviB.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.41 2>&1 &
+
+
+FBEs finales:
+===========================================================
+x_euviB.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.38
+x_euviB.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.49
+x_euviB.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.41
+===========================================================
+ 
+
+

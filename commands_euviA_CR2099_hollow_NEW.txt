@@ -1,0 +1,118 @@
+
+e buildA_params.h
+editar en Sección EUVIBUILD:
+-------------------------------------------------------------------------------------
+Rmin, Rmax, DRAD, NRAD =      1.00000      1.30000    0.0100000      30
+INST_RMAX              =      1.25000
+INNER_REJECT_RAD       =      0.00000
+OUTER_REJECT_RAD       =      1.02000
+NTHETA, DTHETA         =      90      2.00000
+BF                     =       4
+--------------------------------------------------------------------------------------
+#define DATADIR    TOMROOT "DATA/euvi/CR2099_new/A???/"
+#define CONFSTRING DATADIR "list.A???.tom"
+#define A_OUTFILE "euviA.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4"
+#define A_OUTFILE "euviA.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4"
+#define A_OUTFILE "euviA.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4"
+
+e solve_cv_params.h
+editar
+#define FILESTR1 "r3_30_90_180
+
+make clean
+make builda
+make callsolve_cg
+make auto_cv_brent
+cp builda ba_euviA.171.cr2099_hollow_new
+cp callsolve_cg cs_euviA.171.cr2099_hollow_new
+cp auto_cv_brent autocv_euviA.171.cr2099_hollow_new
+
+make clean
+make builda
+make callsolve_cg
+make auto_cv_brent
+cp builda ba_euviA.195.cr2099_hollow_new
+cp callsolve_cg cs_euviA.195.cr2099_hollow_new
+cp auto_cv_brent autocv_euviA.195.cr2099_hollow_new
+
+make clean
+make builda
+make callsolve_cg
+make auto_cv_brent
+cp builda ba_euviA.284.cr2099_hollow_new
+cp callsolve_cg cs_euviA.284.cr2099_hollow_new
+cp auto_cv_brent autocv_euviA.284.cr2099_hollow_new
+
+nohup ./ba_euviA.171.cr2099_hollow_new > termout_bA_euviA.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 2>&1 &
+nohup ./ba_euviA.195.cr2099_hollow_new > termout_bA_euviA.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 2>&1 &
+nohup ./ba_euviA.284.cr2099_hollow_new > termout_bA_euviA.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 2>&1 &
+
+nohup ./cs_euviA.171.cr2099_hollow_new x_zero_30_90_180 x_euviA.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 euviA.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 1.0 > termout_cs_euviA.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 2>&1 &
+nohup ./cs_euviA.195.cr2099_hollow_new x_zero_30_90_180 x_euviA.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 euviA.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 1.0 > termout_cs_euviA.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 2>&1 &
+nohup ./cs_euviA.284.cr2099_hollow_new x_zero_30_90_180 x_euviA.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 euviA.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 1.0 > termout_cs_euviA.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 2>&1 &
+
+cd /media/Data1/data1/tomography/bindata/
+cp x_euviA.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 x_euviA.171.cr2099_hollow_new_acv
+cd /data1/tomography/SolarTom_GRUPO_torre1/
+
+cd /media/Data1/data1/tomography/bindata/
+cp x_euviA.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 x_euviA.195.cr2099_hollow_new_acv
+cd /data1/tomography/SolarTom_GRUPO_torre1/
+
+cd /media/Data1/data1/tomography/bindata/
+cp x_euviA.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 x_euviA.284.cr2099_hollow_new_acv
+cd /data1/tomography/SolarTom_GRUPO_torre1/
+
+nohup ./autocv_euviA.171.cr2099_hollow_new -r5 -w1 -m euviA.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 -i x_euviA.171.cr2099_hollow_new_acv -o x_euviA.171.cr2099_hollow_new_acv > termout_acv_euviA.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 2>&1 &
+nohup ./autocv_euviA.195.cr2099_hollow_new -r5 -w1 -m euviA.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 -i x_euviA.195.cr2099_hollow_new_acv -o x_euviA.195.cr2099_hollow_new_acv > termout_acv_euviA.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 2>&1 &
+nohup ./autocv_euviA.284.cr2099_hollow_new -r5 -w1 -m euviA.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 -i x_euviA.284.cr2099_hollow_new_acv -o x_euviA.284.cr2099_hollow_new_acv > termout_acv_euviA.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 2>&1 &
+
+grep "function" termout_acv_euviA.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4
+grep "function" termout_acv_euviA.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4
+grep "function" termout_acv_euviA.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4
+
+v_171 = [0.248161, 0.317094, 0.40361, 0.171042, 0.186374, 0.104392, 0.383289, 0.338259, 0.217938, 0.572381, 0.897898]
+v_195 = [0.511479, 0.175247, 0.276364, 0.175237, 0.0987067, 0.0916304, 0.324341, 0.295234, 0.0744075, 0.126371, 0.149293]
+v_284 = [1.04269, 0.201402, 0.491801, 0.402889, 0.26315, 0.0582832, 0.0857487, 0.108632, 0.0637262, 0.0549083, 0.360415]
+
+-----------------------------------------------------------------------------------------------
+
+# Calculo p_opt usando la MEDIANA
+IDL> print,median(v_171)
+     0.317094
+IDL> print,median(v_195)
+     0.175237
+IDL> print,median(v_284)
+     0.201402
+171 A: p_opt = 0.32
+195 A: p_opt = 0.18
+284 A: P_opt = 0.20
+
+nohup ./cs_euviA.171.cr2099_hollow_new x_euviA.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 x_euviA.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.32 euviA.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 0.32 > termout_cs_euviA.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.32 2>&1 &
+nohup ./cs_euviA.195.cr2099_hollow_new x_euviA.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 x_euviA.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.18 euviA.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 0.18 > termout_cs_euviA.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.18 2>&1 &
+nohup ./cs_euviA.284.cr2099_hollow_new x_euviA.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 x_euviA.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.20 euviA.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 0.20 > termout_cs_euviA.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.20 2>&1 &
+
+-----------------------------------------------------------------------------------------------
+
+# Calculo p_opt usando el MEAN
+IDL> print,mean(v_171)
+     0.349131
+IDL> print,mean(v_195)
+     0.208937
+IDL> print,mean(v_284)
+     0.284877
+171 A: p_opt = 0.35
+195 A: p_opt = 0.21
+284 A: P_opt = 0.28
+
+nohup ./cs_euviA.171.cr2099_hollow_new x_euviA.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 x_euviA.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.35 euviA.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 0.35 > termout_cs_euviA.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.35 2>&1 &
+nohup ./cs_euviA.195.cr2099_hollow_new x_euviA.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 x_euviA.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.21 euviA.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 0.21 > termout_cs_euviA.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.21 2>&1 &
+nohup ./cs_euviA.284.cr2099_hollow_new x_euviA.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L1.0 x_euviA.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.28 euviA.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4 0.28 > termout_cs_euviA.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.28 2>&1 &
+
+FBEs finales:
+===========================================================
+x_euviA.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.35
+x_euviA.195.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.21
+x_euviA.284.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.28
+===========================================================
+

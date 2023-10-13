@@ -1,0 +1,11 @@
+!PATH = Expand_Path('+/data1/tomography/SolarTom_idl') + ':' + !PATH
+.r inspect_euv_data.pro
+.r inspect_euv_data.pro
+
+base_dir = '/media/Data1'
+data_dir = '/data1/tomography/DATA/euvi/CR2099_new/A195/'
+listfile = 'list.A195.processed.selected.binned'
+
+imagecheck,datadir=data_dir,listfile=listfile,instrument='euvi',band=195,/select,/panel,/zbuff,base_dir=base_dir,/record_gif
+
+

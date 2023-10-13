@@ -1,0 +1,18 @@
+# Time-Binning EUVI data:
+
+sswidlback timebinning_A171 &
+sswidlback timebinning_A195 &
+sswidlback timebinning_A284 &
+sswidlback timebinning_B171 &
+sswidlback timebinning_B195 &
+sswidlback timebinning_B284 &
+
+# Time-Binning AIA data:
+
+sswidlback timebinning_094 &
+sswidlback timebinning_131 &
+sswidlback timebinning_171 &
+sswidlback timebinning_193 &
+sswidlback timebinning_211 &
+sswidlback timebinning_335 &
+

@@ -1,0 +1,7 @@
+!PATH = Expand_Path('+/data1/work/dem') + ':' + !PATH
+
+.r ldem_actual
+.r ldem_actual
+.r ldem_wrapper_euvi_cr2099
+   ldem_actual_euviB_hollow_2bands
+   

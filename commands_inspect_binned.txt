@@ -1,0 +1,15 @@
+# AIA
+sswidlback inspect_aia_094_binned &
+sswidlback inspect_aia_131_binned &
+sswidlback inspect_aia_171_binned &
+sswidlback inspect_aia_193_binned &
+sswidlback inspect_aia_211_binned &
+sswidlback inspect_aia_335_binned &
+# EUVI-A
+sswidlback inspect_euviA_171_binned &
+sswidlback inspect_euviA_195_binned &
+sswidlback inspect_euviA_284_binned &
+# EUVI-B
+sswidlback inspect_euviB_171_binned &
+sswidlback inspect_euviB_195_binned &
+sswidlback inspect_euviB_284_binned &

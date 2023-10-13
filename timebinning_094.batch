@@ -1,0 +1,9 @@
+
+!PATH = Expand_Path('+/data1/tomography/SolarTom_idl') + ':' + !PATH
+
+.r timebinning_aia.pro
+
+data_dir   = '/media/Data1/data1/tomography/DATA/aia/CR2099_new/094/'
+infilename = 'list.094.processed.selected'
+
+timebinning,data_dir=data_dir,infilename=infilename,/aia

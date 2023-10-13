@@ -1,0 +1,9 @@
+
+!PATH = Expand_Path('+/data1/tomography/SolarTom_idl') + ':' + !PATH
+
+.r timebinning_euvi_eit.pro
+
+data_dir   = '/media/Data1/data1/tomography/DATA/euvi/CR2099_new/A284/'
+infilename = 'list.A284.processed.selected'
+
+timebinning,data_dir=data_dir,infilename=infilename,/euvi,/rotate
