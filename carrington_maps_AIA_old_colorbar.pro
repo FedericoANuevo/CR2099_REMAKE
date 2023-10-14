@@ -1,4 +1,5 @@
-
+; Script para comparar los mapas lat-lon con los correspondientes a
+; Nuevo et al. (2015). Misma altura y escala de color.
 
 pro carrington_maps
 

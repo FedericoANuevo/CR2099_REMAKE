@@ -9,12 +9,12 @@ pro FRANKENSTEIN,NFS=NFS,WRITE=WRITE
   if keyword_set(NFS) then root_dir='/media/Data1/data1/'
   dir  =root_dir+'DATA/ldem_files/'
 
-;  file_3bands = 'LDEM.CR2099_euvi.A_Hollow_3Bands_gauss1_lin_Norm-median_singlStart' 
-;  file_2bands = 'LDEM.CR2099_euvi.A_Hollow_2Bands_gauss1_lin_Norm-median_singlStart'  
-;  suffix      = 'CR2099_EUVIA_compound1'
-  file_3bands = 'LDEM.CR2099_euvi.B_Hollow_3Bands_gauss1_lin_Norm-median_singlStart' 
-  file_2bands = 'LDEM.CR2099_euvi.B_Hollow_2Bands_gauss1_lin_Norm-median_singlStart'  
-  suffix      = 'CR2099_EUVIB_compound1'
+   file_3bands = 'LDEM.CR2099_euvi.A_Hollow_3Bands_gauss1_lin_Norm-median_singlStart' 
+   file_2bands = 'LDEM.CR2099_euvi.A_Hollow_2Bands_gauss1_lin_Norm-median_singlStart'  
+   suffix      = 'CR2099_EUVIA_compound1'
+;  file_3bands = 'LDEM.CR2099_euvi.B_Hollow_3Bands_gauss1_lin_Norm-median_singlStart' 
+;  file_2bands = 'LDEM.CR2099_euvi.B_Hollow_2Bands_gauss1_lin_Norm-median_singlStart'  
+;  suffix      = 'CR2099_EUVIB_compound1'
  
 
   

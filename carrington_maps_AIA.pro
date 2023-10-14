@@ -10,8 +10,9 @@ pro carrington_maps,NFS=NFS,write=write
 ; Define the root directory  
   root_dir = '/data1/'
   if keyword_set(NFS) then root_dir='/media/Data1/data1/'
+; Directory where is DEMT file  
   dir  =root_dir+'DATA/ldem_files/'
-; DEMT file  
+; DEMT file and suffix for figs file-name
   file ='LDEM.CR2099_aia_Hollow_3Bands_gauss1_lin_Norm-median_singlStart' & suffix = 'CR2099_AIA_3Bands'
 ; file ='LDEM.CR2099_aia_Hollow_2Bands_gauss1_lin_Norm-median_singlStart' & suffix = 'CR2099_AIA_2Bands' 
 
@@ -35,13 +36,13 @@ pro carrington_maps,NFS=NFS,write=write
 ; Para que los voxeles con R << 1 se vean verde oscuro y no negro:  
   superlow=0.01  & p=where(demc ne -999. AND R le superlow)  & if p(0) ne -1 then Rsat(p)=superlow
 
-; Mark ZDAs  
+; Mark ZDAs (as Black)
   if ZDA(0) ne -1 then begin
      Nesat(ZDA)=0.
      Tmsat(ZDA)=0.
      Rsat (ZDA)=0.
   endif
-; Mark AEVs (CNSs)
+; Mark AEVs (CNSs, as White)
   if CNS(0) ne -1 then begin
      Nesat(CNS)= 1.e16
      Tmsat(CNS)= 1.e12
