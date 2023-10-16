@@ -9,13 +9,16 @@ pro FRANKENSTEIN,NFS=NFS,WRITE=WRITE
   if keyword_set(NFS) then root_dir='/media/Data1/data1/'
   dir  =root_dir+'DATA/ldem_files/'
 
-   file_3bands = 'LDEM.CR2099_euvi.A_Hollow_3Bands_gauss1_lin_Norm-median_singlStart' 
-   file_2bands = 'LDEM.CR2099_euvi.A_Hollow_2Bands_gauss1_lin_Norm-median_singlStart'  
-   suffix      = 'CR2099_EUVIA_compound1'
-;  file_3bands = 'LDEM.CR2099_euvi.B_Hollow_3Bands_gauss1_lin_Norm-median_singlStart' 
-;  file_2bands = 'LDEM.CR2099_euvi.B_Hollow_2Bands_gauss1_lin_Norm-median_singlStart'  
-;  suffix      = 'CR2099_EUVIB_compound1'
- 
+; =========================================================
+; EUVI-A  
+;  file_3bands = 'LDEM.CR2099_euvi.A_Hollow_3Bands_gauss1_lin_Norm-median_singlStart' 
+;  file_2bands = 'LDEM.CR2099_euvi.A_Hollow_2Bands_gauss1_lin_Norm-median_singlStart'  
+;  suffix      = 'CR2099_EUVIA_compound1'
+; EUVI-B  
+ file_3bands = 'LDEM.CR2099_euvi.B_Hollow_3Bands_gauss1_lin_Norm-median_singlStart' 
+ file_2bands = 'LDEM.CR2099_euvi.B_Hollow_2Bands_gauss1_lin_Norm-median_singlStart'  
+ suffix      = 'CR2099_EUVIB_compound1'
+; =========================================================     
 
   
   read_ldem,file_3bands,/ldem,/gauss1,dir=dir
@@ -105,9 +108,9 @@ pro FRANKENSTEIN,NFS=NFS,WRITE=WRITE
   endif
 
 
-  r0A     = [1.025,1.105,1.245]  
+  r0A     = [1.025,1.105,1.155,1.205,1.245]  
   minA_Ne = (r0A*0.+1.E-6)
-  maxA_Ne = [3.5  ,2.5  ,1.5 ]
+  maxA_Ne = [3.5  ,2.5  ,2.2, 2.0, 1.5 ]
   minA_Te = r0A*0. + 0.5
   maxA_Te = r0A*0  + 2.5 
   

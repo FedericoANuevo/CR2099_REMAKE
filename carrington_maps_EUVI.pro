@@ -15,7 +15,7 @@ pro carrington_maps,NFS=NFS,write=write
 ; DEMT file  
   file ='LDEM.CR2099_euvi.A_Hollow_3Bands_gauss1_lin_Norm-median_singlStart' & suffix = 'CR2099_EUVIA_3Bands'
 ; file ='LDEM.CR2099_euvi.A_Hollow_2Bands_gauss1_lin_Norm-median_singlStart' & suffix = 'CR2099_EUVIA_2Bands' 
-; file ='LDEM.CR2099_euvi.B_Hollow_3Bands_gauss1_lin_Norm-median_singlStart' & suffix = 'CR2099_EUVIB_3Bands'
+  file ='LDEM.CR2099_euvi.B_Hollow_3Bands_gauss1_lin_Norm-median_singlStart' & suffix = 'CR2099_EUVIB_3Bands'
 ; file ='LDEM.CR2099_euvi.B_Hollow_2Bands_gauss1_lin_Norm-median_singlStart' & suffix = 'CR2099_EUVIA_2Bands' 
 
 ; Read the DEMT file  
@@ -52,11 +52,11 @@ pro carrington_maps,NFS=NFS,write=write
   endif
 
 ; Range to heights to plot 
-  r0A     = [1.025,1.105,1.245]
+  r0A     = [1.025,1.105,1.205,1.245]
 ; r0A     = [1.155,1.205,1.245]
 ; min and max values to N_e plots  
   minA_Ne = (r0A*0.+1.E-6)
-  maxA_Ne = [3.5  ,2.5  ,1.5 ] 
+  maxA_Ne = [3.5  ,2.5  ,2.0, 1.5 ] 
 ; maxA_Ne = [2.5  ,1.5  ,1.0 ]/1.5
 ; min and max values to T_m plots  
   minA_Te = r0A*0. + 0.5

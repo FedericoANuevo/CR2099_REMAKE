@@ -115,9 +115,9 @@ pro FRANKENSTEIN_RATIO,WRITE=WRITE
   endif
 
 
-  r0A     = [1.025,1.105,1.245]  
+  r0A     = [1.025,1.105,1.205, 1.245]  
   minA_Ne = (r0A*0.+1.E-6)
-  maxA_Ne = [3.5  ,2.5  ,1.5 ]
+  maxA_Ne = [3.5  ,2.5  ,2.0, 1.5 ]
   minA_Te = r0A*0. + 0.5
   maxA_Te = r0A*0  + 2.5 
 
