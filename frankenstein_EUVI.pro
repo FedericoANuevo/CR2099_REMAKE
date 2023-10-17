@@ -11,13 +11,13 @@ pro FRANKENSTEIN,NFS=NFS,WRITE=WRITE
 
 ; =========================================================
 ; EUVI-A  
-;  file_3bands = 'LDEM.CR2099_euvi.A_Hollow_3Bands_gauss1_lin_Norm-median_singlStart' 
-;  file_2bands = 'LDEM.CR2099_euvi.A_Hollow_2Bands_gauss1_lin_Norm-median_singlStart'  
-;  suffix      = 'CR2099_EUVIA_compound1'
+  file_3bands = 'LDEM.CR2099_euvi.A_Hollow_3Bands_gauss1_lin_Norm-median_singlStart' 
+  file_2bands = 'LDEM.CR2099_euvi.A_Hollow_2Bands_gauss1_lin_Norm-median_singlStart'  
+  suffix      = 'CR2099_EUVIA_compound1'
 ; EUVI-B  
- file_3bands = 'LDEM.CR2099_euvi.B_Hollow_3Bands_gauss1_lin_Norm-median_singlStart' 
- file_2bands = 'LDEM.CR2099_euvi.B_Hollow_2Bands_gauss1_lin_Norm-median_singlStart'  
- suffix      = 'CR2099_EUVIB_compound1'
+; file_3bands = 'LDEM.CR2099_euvi.B_Hollow_3Bands_gauss1_lin_Norm-median_singlStart' 
+; file_2bands = 'LDEM.CR2099_euvi.B_Hollow_2Bands_gauss1_lin_Norm-median_singlStart'  
+; suffix      = 'CR2099_EUVIB_compound1'
 ; =========================================================     
 
   
