@@ -12,10 +12,10 @@ pro compare_aia_vs_euvi
   region_name = 'STR: '
   comp_suffix = 'aia_vs_euvi_STR'
 ; --------------------------------------------------------------
-;  lat_range   = [70., 90.]
-;  lon_range   = [ 0.,180.]
-;  region_name = 'NCH: '
-;  comp_suffix = 'aia_vs_euvi_NCH'
+  lat_range   = [70., 90.]
+  lon_range   = [ 0.,180.]
+  region_name = 'NCH: '
+  comp_suffix = 'aia_vs_euvi_NCH'
 ; --------------------------------------------------------------  
 ;  lat_range   = [-90.,-70]
 ;  lon_range   = [ 0.,360.]
