@@ -3,23 +3,29 @@
 ; ratio       = EUVI-A/EUVI-B
 
 
-pro compare_euvi_A_vs_B
+pro compare_euvi_A_vs_B,str=str,nch=nch,sch=sch
 
 ; --------------------------------------------------------------
-  lat_range   = [-40., 40.]
-  lon_range   = [  0.,180.]
-  region_name = 'STR: '
-  comp_suffix = 'euvi_A_vs_B_STR'
+  if keyword_set(str) then begin
+     lat_range   = [-40., 40.]
+     lon_range   = [  0.,180.]
+     region_name = 'STR: '
+     comp_suffix = 'euvi_A_vs_B_STR'
+  endif
 ; --------------------------------------------------------------
-  lat_range   = [70., 90.]
-  lon_range   = [ 0.,180.]
-  region_name = 'NCH: '
-  comp_suffix = 'euvi_A_vs_B_NCH'
-; --------------------------------------------------------------  
-;  lat_range   = [-90.,-70]
-;  lon_range   = [ 0.,360.]
-;  region_name = 'SCH: '
-;  comp_suffix = 'euvi_A_vs_B_SCH'
+  if keyword_set(nch) then begin
+     lat_range   = [70., 90.]
+     lon_range   = [ 0.,180.]
+     region_name = 'NCH: '
+     comp_suffix = 'euvi_A_vs_B_NCH'
+  endif
+; --------------------------------------------------------------
+  if keyword_set(sch) then begin
+     lat_range   = [-90.,-70]
+     lon_range   = [ 0.,360.]
+     region_name = 'SCH: '
+     comp_suffix = 'euvi_A_vs_B_SCH'
+  endif
 ; ------------------------------------------------------------  
     
 ; Path to use x-tools in SolarTom_idl  

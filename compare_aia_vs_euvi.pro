@@ -4,23 +4,29 @@
 
 ; Uso EUVI = EUVI-B por similitud con Fig 6 Nuevo et al. (2015)
 
-pro compare_aia_vs_euvi
+pro compare_aia_vs_euvi,str=str,nch=nch,sch=sch
 
 ; --------------------------------------------------------------
-  lat_range   = [-40., 40.]
-  lon_range   = [  0.,180.]
-  region_name = 'STR: '
-  comp_suffix = 'aia_vs_euvi_STR'
+  if keyword_set(str) then begin
+     lat_range   = [-40., 40.]
+     lon_range   = [  0.,180.]
+     region_name = 'STR: '
+     comp_suffix = 'aia_vs_euvi_STR'
+  endif
 ; --------------------------------------------------------------
-  lat_range   = [70., 90.]
-  lon_range   = [ 0.,180.]
-  region_name = 'NCH: '
-  comp_suffix = 'aia_vs_euvi_NCH'
-; --------------------------------------------------------------  
-;  lat_range   = [-90.,-70]
-;  lon_range   = [ 0.,360.]
-;  region_name = 'SCH: '
-;  comp_suffix = 'aia_vs_euvi_SCH'
+  if keyword_set(nch) then begin
+     lat_range   = [70., 90.]
+     lon_range   = [ 0.,180.]
+     region_name = 'NCH: '
+     comp_suffix = 'aia_vs_euvi_NCH'
+  endif
+; --------------------------------------------------------------
+  if keyword_set(sch) then begin
+     lat_range   = [-90.,-70]
+     lon_range   = [ 0.,360.]
+     region_name = 'SCH: '
+     comp_suffix = 'aia_vs_euvi_SCH'
+  endif
 ; ------------------------------------------------------------  
     
 ; Path to use x-tools in SolarTom_idl  
@@ -41,7 +47,6 @@ pro compare_aia_vs_euvi
 ; A => SDO/AIA
 ; ======================================================================  
   dirA     = '/data1/DATA/ldem_files/'
-; fileA    = 'LDEM.CR2099_aia_Hollow_3Bands_gauss1_lin_Norm-median_singlStart'
   fileA    = 'CR2099_AIA_compound1.dat'
   fileA_Ne = 'Ne_'+fileA
   fileA_Te = 'Te_'+fileA
@@ -51,8 +56,7 @@ pro compare_aia_vs_euvi
 ; B => STEREO/EUVI
 ; ======================================================================  
   dirB     = '/data1/DATA/ldem_files/'
-; fileB    = 'LDEM.CR2099_euvi.A_Hollow_3Bands_gauss1_lin_Norm-median_singlStart' ;
-  fileB    = 'CR2099_EUVIA_compound1.dat' 
+  fileB    = 'CR2099_EUVIA_compound1.dat'
   fileB_Ne = 'Ne_'+fileB
   fileB_Te = 'Te_'+fileB
   labelB   = 'EUVI'
