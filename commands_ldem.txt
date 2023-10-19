@@ -3,6 +3,8 @@
 # AIA
 sswidlback ldem_actual_aia_hollow_3bands &
 sswidlback ldem_actual_aia_hollow_2bands &
+sswidlback ldem_actual_aia_hollow_3bands_cold &
+
 # EUVI-A
 sswidlback ldem_actual_euviA_hollow_3bands &
 sswidlback ldem_actual_euviA_hollow_2bands &

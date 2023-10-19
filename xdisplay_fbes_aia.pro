@@ -3,7 +3,8 @@
 
 pro xdisplay_fbes_aia
 ;++++++++++++++++++++++++++++++
-  reg_string = '_L0.5'
+  reg_string = '_L1.0'
+  reg_string = '_Lopt' 
 ;+++++++++++++++++++++++++++++
   
 ; Path to use x-tools in SolarTom_idl  
@@ -34,14 +35,23 @@ pro xdisplay_fbes_aia
 ; FBE directory:
   FBEdir = root_dir+'tomography/bindata/'
 ; FBES files:
-  datafiles= ['x_aia.094.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4',$
-              'x_aia.131.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4',$
-              'x_aia.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4',$
-              'x_aia.193.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4',$
-              'x_aia.211.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4',$
-              'x_aia.335.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4']+reg_string
-
-
+  if reg_string ne '_Lopt' then begin
+     datafiles= ['x_aia.094.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4',$
+                 'x_aia.131.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4',$
+                 'x_aia.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4',$
+                 'x_aia.193.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4',$
+                 'x_aia.211.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4',$
+                 'x_aia.335.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4']+reg_string
+  endif else begin
+     datafiles= ['x_aia.094.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.52',$
+                 'x_aia.131.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.39',$
+                 'x_aia.171.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.63',$
+                 'x_aia.193.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.37',$
+                 'x_aia.211.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.5' ,$
+                 'x_aia.335.CR2099_hollow_NEW_Rmin1.00_Rmax1.30_IRmax1.25_30x90x180_BF4_L0.38']
+  endelse
+  
+  
     
 ; sample heights to plot
   r0A=[1.105]
