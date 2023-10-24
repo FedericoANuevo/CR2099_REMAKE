@@ -1,9 +1,9 @@
 ; This script allows display lat-lon maps of FBEs from AIA data with
-; different regularization parameter values 
+; different regularization parameter values
 
 pro xdisplay_fbes_aia
 ;++++++++++++++++++++++++++++++
-  reg_string = '_L1.0'
+; reg_string = '_L1.0'
   reg_string = '_Lopt' 
 ;+++++++++++++++++++++++++++++
   

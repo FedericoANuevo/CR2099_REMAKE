@@ -47,7 +47,11 @@ pro compare_aia_vs_euvi,str=str,nch=nch,sch=sch
 ; A => SDO/AIA
 ; ======================================================================  
   dirA     = '/data1/DATA/ldem_files/'
-  fileA    = 'CR2099_AIA_compound1.dat'
+; fileA    = 'LDEM.CR2099_aia_Hollow_3Bands_gauss1_lin_Norm-median_singlStart'
+; fileA    = 'CR2099_AIA_compound1.dat'
+  fileA    = 'LDEM.CR2099_aia_Hollow_3Bands_131-193A_gauss1_lin_Norm-median_singlStart'
+; fileA    = 'LDEM.CR2099_aia_Hollow_2Bands_gauss1_lin_Norm-median_singlStart'
+; fileA    = 'ratio_CR2099_AIA171-193A.dat'
   fileA_Ne = 'Ne_'+fileA
   fileA_Te = 'Te_'+fileA
   labelA   = 'AIA'
@@ -56,7 +60,10 @@ pro compare_aia_vs_euvi,str=str,nch=nch,sch=sch
 ; B => STEREO/EUVI
 ; ======================================================================  
   dirB     = '/data1/DATA/ldem_files/'
-  fileB    = 'CR2099_EUVIA_compound1.dat'
+; fileB    = 'LDEM.CR2099_euvi.B_Hollow_3Bands_gauss1_lin_Norm-median_singlStart'
+  fileB    = 'CR2099_EUVIB_compound1.dat'
+; fileB    = 'LDEM.CR2099_euvi.B_Hollow_2Bands_gauss1_lin_Norm-median_singlStart'
+; fileB    = 'ratio_CR2099_EUVI-A_171-195A.dat' 
   fileB_Ne = 'Ne_'+fileB
   fileB_Te = 'Te_'+fileB
   labelB   = 'EUVI'
