@@ -41,10 +41,10 @@ pro plot_qkl_aia
               'Qkl_335_chianti.ioneq_sun_coronal_1992_feldman_ext.abund.AIA-OptimalWaveRange-photons-Abund-1e-3-ALL-withCONTINUUM_Ne1E08_C10.Nosum_Te0.1-5.0MK.out' ]
   qklfiles = Qkldir+qklfiles
 ; Bands to use:
-  bandsindexes = [1,2,3,4,5]
+  bandsindexes = [2,3,4]
 ; Temperature grid parameters
-  Tmin =  0.35                   ; MK
-  Tmax =  5.0                   ; MK
+  Tmin =  0.5                   ; MK
+  Tmax =  3.5                   ; MK
   DT   =  5.e-4                 ; MK 
 ; call to main routine
   plot_qkl,qklfiles,Tmin,Tmax,DT,bandsindexes

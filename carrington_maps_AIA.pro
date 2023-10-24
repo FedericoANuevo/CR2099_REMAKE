@@ -13,8 +13,8 @@ pro carrington_maps,NFS=NFS,write=write
 ; Directory where is DEMT file  
   dir  =root_dir+'DATA/ldem_files/'
 ; DEMT file and suffix for figs file-name
-  file ='LDEM.CR2099_aia_Hollow_3Bands_94-171-193A_gauss1_lin_Norm-median_singlStart' & suffix = 'CR2099_AIA_3Bands_94-171-193A'
-; file ='LDEM.CR2099_aia_Hollow_3Bands_131-193A_gauss1_lin_Norm-median_singlStart' & suffix = 'CR2099_AIA_3Bands_cold'
+; file ='LDEM.CR2099_aia_Hollow_3Bands_94-171-193A_gauss1_lin_Norm-median_singlStart' & suffix = 'CR2099_AIA_3Bands_94-171-193A'
+  file ='LDEM.CR2099_aia_Hollow_3Bands_131-193A_gauss1_lin_Norm-median_singlStart' & suffix = 'CR2099_AIA_3Bands_cold'
 ; file ='LDEM.CR2099_aia_Hollow_3Bands_gauss1_lin_Norm-median_singlStart'          & suffix = 'CR2099_AIA_3Bands'
 ; file ='LDEM.CR2099_aia_Hollow_2Bands_gauss1_lin_Norm-median_singlStart'          & suffix = 'CR2099_AIA_2Bands' 
 
