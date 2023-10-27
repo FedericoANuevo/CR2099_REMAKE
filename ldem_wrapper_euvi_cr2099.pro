@@ -213,11 +213,13 @@ end
 ; Wrapper-5
 ; Solución HOLLOW 3-bandas usando FBE lambda_opt de cada banda para EUVI-A
 ; Modificamos Q_k(T_e) de k = 284 A para eliminar el segundo maximo de
-; sensibilidad termica a bajas temperaturas ( ~ 0.6 MK).
+; sensibilidad termica a bajas temperaturas ( ~ 0.6 MK). Para ello se
+; recalculan las TRFs anulando la abundancia de Mg y Si.
 
-pro ldem_actual_euviA_hollow_3bands_test
+
+pro ldem_actual_euviA_hollow_3bands_Cancel_Mg_Si
 ;   NOTA: El BATCH correspondiente es:
-;   ldem_actual_euviA_hollow_3bands.batch
+;   ldem_actual_euviA_hollow_3bands_Cancel-Mg-Si.batch
   
 ;=====================Editar parámetros desde aquí=======================
 ; Grilla de Temperatura para determinar la LDEM:
@@ -244,15 +246,15 @@ pro ldem_actual_euviA_hollow_3bands_test
 ; Sufijo para indicar el periodo (rotacion de Carrington)
   CRstring= 'CR2099'
 ; Sufijo para indicar instrumento, disk/hollow, numero de bandas utilizadas:
-  Expstring= '_euvi.A_Hollow_3Bands'
+  Expstring= '_euvi.A_Hollow_3Bands_Cancel-Mg-Si'
 ; ================== hasta aquí =========================================
   
 ; Qkl directory:
   Qkldir = '/media/Data1/data1/DATA/EUV_TRFs_and_PassBands/'
 ; Qkl files
-  Qklfiles = ['Qkl_171_chianti.ioneq_sun_coronal_1992_feldman_ext.abund_EUVIA-S1a-Filter_OptimalWaveRange_photons-Abund-1e-3-ALL-withCONTINUUM_Ne1E08_C10_Te0.1-5.0MK.out',$
-              'Qkl_195_chianti.ioneq_sun_coronal_1992_feldman_ext.abund_EUVIA-S1a-Filter_OptimalWaveRange_photons-Abund-1e-3-ALL-withCONTINUUM_Ne1E08_C10_Te0.1-5.0MK.out',$
-              'Qkl_284_chianti.ioneq_sun_coronal_1992_feldman_ext.abund_EUVIA-S1a-Filter_OptimalWaveRange_photons-Abund-1e-3-ALL-withCONTINUUM_Ne1E08_C10_Te0.1-5.0MK.out']
+  Qklfiles = ['Qkl_171_chianti.ioneq_sun_coronal_1992_feldman_ext_Cancel-Mg-Si.abund_EUVIA-S1a-Filter_OptimalWaveRange_photons-Abund-1e-3-ALL-withCONTINUUM_Ne1E08_C10_Te0.1-5.0MK.out',$
+              'Qkl_195_chianti.ioneq_sun_coronal_1992_feldman_ext_Cancel-Mg-Si.abund_EUVIA-S1a-Filter_OptimalWaveRange_photons-Abund-1e-3-ALL-withCONTINUUM_Ne1E08_C10_Te0.1-5.0MK.out',$
+              'Qkl_284_chianti.ioneq_sun_coronal_1992_feldman_ext_Cancel-Mg-Si.abund_EUVIA-S1a-Filter_OptimalWaveRange_photons-Abund-1e-3-ALL-withCONTINUUM_Ne1E08_C10_Te0.1-5.0MK.out']
 ; Agrego el path del directorio:
   Qklfiles   = Qkldir + Qklfiles
                                
@@ -267,12 +269,13 @@ end
 ; Wrapper-6
 ; Solución HOLLOW 3-bandas usando FBE lambda_opt de cada banda para EUVI-B
 ; Modificamos Q_k(T_e) de k = 284 A para eliminar el segundo maximo de
-; sensibilidad termica a bajas temperaturas ( ~ 0.6 MK).
+; sensibilidad termica a bajas temperaturas ( ~ 0.6 MK). Para ello se
+; recalculan las TRFs anulando las abundancias de Mg y Si.
 
 
-pro ldem_actual_euviB_hollow_3bands_test
+pro ldem_actual_euviB_hollow_3bands_Cancel_Mg_Si
 ;   NOTA: El BATCH correspondiente es:
-;   ldem_actual_euviB_hollow_3bands.batch
+;   ldem_actual_euviB_hollow_3bands_Cancel-Mg-Si &
   
 ;=====================Editar parámetros desde aquí=======================
 ; Grilla de Temperatura para determinar la LDEM:
@@ -299,15 +302,15 @@ pro ldem_actual_euviB_hollow_3bands_test
 ; Sufijo para indicar el periodo (rotacion de Carrington)
   CRstring= 'CR2099'
 ; Sufijo para indicar instrumento, disk/hollow, numero de bandas utilizadas:
-  Expstring= '_euvi.B_Hollow_3Bands'
+  Expstring= '_euvi.B_Hollow_3Bands_Cancel-Mg-Si'
 ; ================== hasta aquí =========================================
   
 ; Qkl directory:
   Qkldir = '/media/Data1/data1/DATA/EUV_TRFs_and_PassBands/'
 ; Qkl files
-  Qklfiles = ['Qkl_171_chianti.ioneq_sun_coronal_1992_feldman_ext.abund_EUVIB-S1b-Filter_OptimalWaveRange_photons-Abund-1e-3-ALL-withCONTINUUM_Ne1E08_C10_Te0.1-5.0MK.out',$
-              'Qkl_195_chianti.ioneq_sun_coronal_1992_feldman_ext.abund_EUVIB-S1b-Filter_OptimalWaveRange_photons-Abund-1e-3-ALL-withCONTINUUM_Ne1E08_C10_Te0.1-5.0MK.out',$
-              'Qkl_284_chianti.ioneq_sun_coronal_1992_feldman_ext.abund_EUVIB-S1b-Filter_OptimalWaveRange_photons-Abund-1e-3-ALL-withCONTINUUM_Ne1E08_C10_Te0.1-5.0MK.out']
+  Qklfiles = ['Qkl_171_chianti.ioneq_sun_coronal_1992_feldman_ext_Cancel-Mg-Si.abund_EUVIB-S1b-Filter_OptimalWaveRange_photons-Abund-1e-3-ALL-withCONTINUUM_Ne1E08_C10_Te0.1-5.0MK.out',$
+              'Qkl_195_chianti.ioneq_sun_coronal_1992_feldman_ext_Cancel-Mg-Si.abund_EUVIB-S1b-Filter_OptimalWaveRange_photons-Abund-1e-3-ALL-withCONTINUUM_Ne1E08_C10_Te0.1-5.0MK.out',$
+              'Qkl_284_chianti.ioneq_sun_coronal_1992_feldman_ext_Cancel-Mg-Si.abund_EUVIB-S1b-Filter_OptimalWaveRange_photons-Abund-1e-3-ALL-withCONTINUUM_Ne1E08_C10_Te0.1-5.0MK.out']
 ; Agrego el path del directorio:
   Qklfiles   = Qkldir + Qklfiles
                                

@@ -16,8 +16,10 @@ pro carrington_maps,NFS=NFS,write=write
 ; file ='LDEM.CR2099_euvi.A_Hollow_3Bands_gauss1_lin_Norm-median_singlStart' & suffix = 'CR2099_EUVIA_3Bands'
 ; file ='LDEM.CR2099_euvi.A_Hollow_2Bands_gauss1_lin_Norm-median_singlStart' & suffix = 'CR2099_EUVIA_2Bands' 
   file ='LDEM.CR2099_euvi.B_Hollow_3Bands_gauss1_lin_Norm-median_singlStart' & suffix = 'CR2099_EUVIB_3Bands'
+; file ='LDEM.CR2099_euvi.B_Hollow_3Bands_Cancel-Mg-Si_gauss1_lin_Norm-median_singlStart' & suffix = 'CR2099_EUVIB_3Bands_Cancel-Mg-Si'
 ; file ='LDEM.CR2099_euvi.B_Hollow_2Bands_gauss1_lin_Norm-median_singlStart' & suffix = 'CR2099_EUVIB_2Bands' 
 
+  
 ; Read the DEMT file  
   if not keyword_set(write) then read_ldem,file,/ldem,/gauss1,dir=dir
 ; Write the DEMT producs as data-cubes  

@@ -51,7 +51,7 @@ pro compare_aia_vs_euvi,str=str,nch=nch,sch=sch
 ; fileA    = 'CR2099_AIA_compound1.dat'
   fileA    = 'LDEM.CR2099_aia_Hollow_3Bands_131-193A_gauss1_lin_Norm-median_singlStart'
 ; fileA    = 'LDEM.CR2099_aia_Hollow_2Bands_gauss1_lin_Norm-median_singlStart'
-  fileA    = 'ratio_CR2099_AIA171-193A.dat'
+; fileA    = 'ratio_CR2099_AIA171-193A.dat'
   fileA_Ne = 'Ne_'+fileA
   fileA_Te = 'Te_'+fileA
   labelA   = 'AIA'
