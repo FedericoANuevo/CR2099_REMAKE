@@ -1,0 +1,154 @@
+
+e buildA_params.h
+editar en Sección AIABUILD:
+-------------------------------------------------------------------------------------
+Rmin, Rmax, DRAD, NRAD =      1.15000      1.35000    0.0100000      20
+INST_RMAX              =      1.30000
+INNER_REJECT_RAD       =      0.00000
+OUTER_REJECT_RAD       =      1.15000
+NTHETA, DTHETA         =      90      2.00000
+BF                     =       4
+--------------------------------------------------------------------------------------
+#define DATADIR    TOMROOT "DATA/aia/CR2099_new/???/"
+#define CONFSTRING DATADIR "list.???.tom"
+#define A_OUTFILE "aia.094.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4"
+#define A_OUTFILE "aia.131.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4"
+#define A_OUTFILE "aia.171.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4"
+#define A_OUTFILE "aia.193.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4"
+#define A_OUTFILE "aia.211.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4"
+#define A_OUTFILE "aia.335.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4"
+
+e solve_cv_params.h
+editar
+#define FILESTR1 "r3_20_90_180
+
+make clean
+make builda
+make callsolve_cg
+make auto_cv_brent
+cp builda ba_aia.094.cr2099_hollow_new_fov2
+cp callsolve_cg cs_aia.094.cr2099_hollow_new_fov2
+cp auto_cv_brent autocv_aia.094.cr2099_hollow_new_fov2
+
+make clean
+make builda
+make callsolve_cg
+make auto_cv_brent
+cp builda ba_aia.131.cr2099_hollow_new_fov2
+cp callsolve_cg cs_aia.131.cr2099_hollow_new_fov2
+cp auto_cv_brent autocv_aia.131.cr2099_hollow_new_fov2
+
+make clean
+make builda
+make callsolve_cg
+make auto_cv_brent
+cp builda ba_aia.171.cr2099_hollow_new_fov2
+cp callsolve_cg cs_aia.171.cr2099_hollow_new_fov2
+cp auto_cv_brent autocv_aia.171.cr2099_hollow_new_fov2
+
+make clean
+make builda
+make callsolve_cg
+make auto_cv_brent
+cp builda ba_aia.193.cr2099_hollow_new_fov2
+cp callsolve_cg cs_aia.193.cr2099_hollow_new_fov2
+cp auto_cv_brent autocv_aia.193.cr2099_hollow_new_fov2
+
+make clean
+make builda
+make callsolve_cg
+make auto_cv_brent
+cp builda ba_aia.211.cr2099_hollow_new_fov2
+cp callsolve_cg cs_aia.211.cr2099_hollow_new_fov2
+cp auto_cv_brent autocv_aia.211.cr2099_hollow_new_fov2
+
+make clean
+make builda
+make callsolve_cg
+make auto_cv_brent
+cp builda ba_aia.335.cr2099_hollow_new_fov2
+cp callsolve_cg cs_aia.335.cr2099_hollow_new_fov2
+cp auto_cv_brent autocv_aia.335.cr2099_hollow_new_fov2
+
+nohup ./ba_aia.094.cr2099_hollow_new_fov2 > termout_bA_aia.094.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 2>&1 &
+nohup ./ba_aia.131.cr2099_hollow_new_fov2 > termout_bA_aia.131.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 2>&1 &
+nohup ./ba_aia.171.cr2099_hollow_new_fov2 > termout_bA_aia.171.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 2>&1 &
+nohup ./ba_aia.193.cr2099_hollow_new_fov2 > termout_bA_aia.193.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 2>&1 &
+nohup ./ba_aia.211.cr2099_hollow_new_fov2 > termout_bA_aia.211.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 2>&1 &
+nohup ./ba_aia.335.cr2099_hollow_new_fov2 > termout_bA_aia.335.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 2>&1 &
+
+nohup ./cs_aia.094.cr2099_hollow_new_fov2 x_zero_20_90_180 x_aia.094.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L1.0 aia.094.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 1.0 > termout_cs_aia.094.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L1.0 2>&1 &
+nohup ./cs_aia.131.cr2099_hollow_new_fov2 x_zero_20_90_180 x_aia.131.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L1.0 aia.131.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 1.0 > termout_cs_aia.131.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L1.0 2>&1 &
+nohup ./cs_aia.171.cr2099_hollow_new_fov2 x_zero_20_90_180 x_aia.171.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L1.0 aia.171.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 1.0 > termout_cs_aia.171.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L1.0 2>&1 &
+nohup ./cs_aia.193.cr2099_hollow_new_fov2 x_zero_20_90_180 x_aia.193.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L1.0 aia.193.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 1.0 > termout_cs_aia.193.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L1.0 2>&1 &
+nohup ./cs_aia.211.cr2099_hollow_new_fov2 x_zero_20_90_180 x_aia.211.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L1.0 aia.211.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 1.0 > termout_cs_aia.211.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L1.0 2>&1 &
+nohup ./cs_aia.335.cr2099_hollow_new_fov2 x_zero_20_90_180 x_aia.335.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L1.0 aia.335.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 1.0 > termout_cs_aia.335.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L1.0 2>&1 &
+
+cd /media/Data1/data1/tomography/bindata/
+cp x_aia.094.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L1.0 x_aia.094.cr2099_hollow_new_fov2_acv
+cd /data1/tomography/SolarTom_GRUPO_torre1/
+
+cd /media/Data1/data1/tomography/bindata/
+cp x_aia.131.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L1.0 x_aia.131.cr2099_hollow_new_fov2_acv
+cd /data1/tomography/SolarTom_GRUPO_torre1/
+
+cd /media/Data1/data1/tomography/bindata/
+cp x_aia.171.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L1.0 x_aia.171.cr2099_hollow_new_fov2_acv
+cd /data1/tomography/SolarTom_GRUPO_torre1/
+
+cd /media/Data1/data1/tomography/bindata/
+cp x_aia.193.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L1.0 x_aia.193.cr2099_hollow_new_fov2_acv
+cd /data1/tomography/SolarTom_GRUPO_torre1/
+
+cd /media/Data1/data1/tomography/bindata/
+cp x_aia.211.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L1.0 x_aia.211.cr2099_hollow_new_fov2_acv
+cd /data1/tomography/SolarTom_GRUPO_torre1/
+
+cd /media/Data1/data1/tomography/bindata/
+cp x_aia.335.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L1.0 x_aia.335.cr2099_hollow_new_fov2_acv
+cd /data1/tomography/SolarTom_GRUPO_torre1/
+
+nohup ./autocv_aia.094.cr2099_hollow_new_fov2 -r5 -w1 -m aia.094.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 -i x_aia.094.cr2099_hollow_new_fov2_acv -o x_aia.094.cr2099_hollow_new_fov2_acv > termout_acv_aia.094.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 2>&1 &
+nohup ./autocv_aia.131.cr2099_hollow_new_fov2 -r5 -w1 -m aia.131.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 -i x_aia.131.cr2099_hollow_new_fov2_acv -o x_aia.131.cr2099_hollow_new_fov2_acv > termout_acv_aia.131.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 2>&1 &
+nohup ./autocv_aia.171.cr2099_hollow_new_fov2 -r5 -w1 -m aia.171.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 -i x_aia.171.cr2099_hollow_new_fov2_acv -o x_aia.171.cr2099_hollow_new_fov2_acv > termout_acv_aia.171.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 2>&1 &
+nohup ./autocv_aia.193.cr2099_hollow_new_fov2 -r5 -w1 -m aia.193.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 -i x_aia.193.cr2099_hollow_new_fov2_acv -o x_aia.193.cr2099_hollow_new_fov2_acv > termout_acv_aia.193.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 2>&1 &
+nohup ./autocv_aia.211.cr2099_hollow_new_fov2 -r5 -w1 -m aia.211.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 -i x_aia.211.cr2099_hollow_new_fov2_acv -o x_aia.211.cr2099_hollow_new_fov2_acv > termout_acv_aia.211.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 2>&1 &
+nohup ./autocv_aia.335.cr2099_hollow_new_fov2 -r5 -w1 -m aia.335.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 -i x_aia.335.cr2099_hollow_new_fov2_acv -o x_aia.335.cr2099_hollow_new_fov2_acv > termout_acv_aia.335.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 2>&1 &
+
+grep "function" termout_acv_aia.094.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4
+grep "function" termout_acv_aia.131.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4
+grep "function" termout_acv_aia.171.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4
+grep "function" termout_acv_aia.193.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4
+grep "function" termout_acv_aia.211.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4
+grep "function" termout_acv_aia.335.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4
+
+
+
+
+v_171 = [1.99081, 1.38502, 0.459063, 0.468111, 1.98815, 1.99081, 0.915124, 0.592891, 1.91652, 1.14255]
+v_193 = [1.99081, 0.943409, 0.963586, 0.566756, 1.02471, 1.15864, 0.676397, 0.473776, 0.951378, 1.99081]
+v_211 = [1.99081, 1.99081, 0.942138, 0.688189, 1.99081, 1.99081, 0.398585, 0.263533, 0.648859, 1.21736, 0.57404]
+
+IDL> print,median(v_171),mean(v_171),stdev(v_171)
+      1.38502      1.28490     0.657028
+IDL> print,median(v_193),mean(v_193),stdev(v_193)
+     0.963586      1.07403     0.528163
+IDL> print,median(v_211),mean(v_211),stdev(v_211)
+     0.942138      1.15418     0.708660
+
+p_171_opt = 1.4
+p_193_opt = 1.0
+p_211_opt = 0.9
+
+
+nohup ./cs_aia.171.cr2099_hollow_new_fov2 x_zero_20_90_180 x_aia.171.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L1.4 aia.171.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 1.4 > termout_cs_aia.171.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L1.4 2>&1 &
+nohup ./cs_aia.211.cr2099_hollow_new_fov2 x_zero_20_90_180 x_aia.211.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L0.9 aia.211.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4 0.9 > termout_cs_aia.211.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L0.9 2>&1 &
+
+
+Tomografías finales:
+=======================================================
+x_aia.171.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L1.4
+x_aia.193.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L1.0
+x_aia.211.CR2099_hollow_NEW_fov2_Rmin1.15_Rmax1.35_IRmax1.30_20x90x180_BF4_L0.9
+=======================================================
+

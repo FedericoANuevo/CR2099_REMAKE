@@ -1,0 +1,6 @@
+
+# COMMANDS
+----------------------------------------------
+sswidlback ldem_actual_aia_fov_total &
+sswidlback ldem_actual_aia_fov1 &
+sswidlback ldem_actual_aia_fov2 &

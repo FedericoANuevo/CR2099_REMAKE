@@ -5,25 +5,25 @@ pro commands
 ; EDIT THIS SECTION ONLY!
 ; ===========================================================================================
   basedir     = './'
-  filename    = 'commands_euviA_CR2099_hollow_NEW.txt'
-  file_suffix = 'CR2099_hollow_NEW'
-  exe_suffix  = 'cr2099_hollow_new'
+  filename    = 'commands_aia_CR2099_hollow_NEW_fov2.txt'
+  file_suffix = 'CR2099_hollow_NEW_fov2'
+  exe_suffix  = 'cr2099_hollow_new_fov2'
 
-; instrBUILD='AIABUILD' 
-  instrBUILD='EUVIBUILD' & spacecraft='stereo-A'
+  instrBUILD='AIABUILD' 
+; instrBUILD='EUVIBUILD' & spacecraft='stereo-A'
   tomtype   ='hollow' ; 'disk'
 
-  rmin   = 1.00   & rmin_str = '1.00'  
-  rmax   = 1.30   & rmax_str = '1.30' 
-  Irmin  = 0.00   & Irmin_str= '0.00'
-  Irmax  = 1.25   & Irmax_str= '1.25'
-  Nr     = 30     & Nr_str   = '30'
+  rmin   = 1.15   & rmin_str = '1.15'  
+  rmax   = 1.35   & rmax_str = '1.35' 
+; Irmin  = 0.00   & Irmin_str= '0.00'
+  Irmax  = 1.30   & Irmax_str= '1.30'
+  Nr     = 20     & Nr_str   = '20'
   Nth    = 90     & Nth_str  = '90'
   Nph    = 180    & Nph_str  = '180'
   BF     = 4      & BF_str   = '4'
   reg    = 1.0    & reg_str  = '1.0'
-  dirlist= 'DATA/euvi/CR2099_new/A???/'
-  list   = 'list.A???.tom'
+  dirlist= 'DATA/aia/CR2099_new/???/'
+  list   = 'list.???.tom'
 ; ===========================================================================================
 
  
