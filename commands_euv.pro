@@ -5,19 +5,19 @@ pro commands
 ; EDIT THIS SECTION ONLY!
 ; ===========================================================================================
   basedir     = './'
-  filename    = 'commands_aia_CR2099_hollow_NEW_fov2.txt'
-  file_suffix = 'CR2099_hollow_NEW_fov2'
-  exe_suffix  = 'cr2099_hollow_new_fov2'
+  filename    = 'commands_aia_CR2099_hollow_NEW_Irmax1.2.txt'
+  file_suffix = 'CR2099_hollow_NEW_Irmax1.2'
+  exe_suffix  = 'cr2099_hollow_new_Irmax1.2'
 
   instrBUILD='AIABUILD' 
 ; instrBUILD='EUVIBUILD' & spacecraft='stereo-A'
   tomtype   ='hollow' ; 'disk'
 
-  rmin   = 1.15   & rmin_str = '1.15'  
-  rmax   = 1.35   & rmax_str = '1.35' 
+  rmin   = 1.0    & rmin_str = '1.0'  
+  rmax   = 1.25   & rmax_str = '1.25' 
 ; Irmin  = 0.00   & Irmin_str= '0.00'
-  Irmax  = 1.30   & Irmax_str= '1.30'
-  Nr     = 20     & Nr_str   = '20'
+  Irmax  = 1.2    & Irmax_str= '1.2'
+  Nr     = 25     & Nr_str   = '25'
   Nth    = 90     & Nth_str  = '90'
   Nph    = 180    & Nph_str  = '180'
   BF     = 4      & BF_str   = '4'

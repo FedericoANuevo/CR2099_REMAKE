@@ -58,12 +58,18 @@ pro FRANKENSTEIN,NFS=NFS,WRITE=WRITE
   R   (index) =     R_2bands(index)
   demc(index) =  demc_2bands(index)
 
-
+; Assign 2bands results where 3Bands has Tm ~ 0.5 MK.
+  index = where(Tm_3bands gt 0.5e6 and Tm_3bands lt 0.55e6)
+  N_e (index) =    Ne_2bands(index)
+  Tm  (index) =    Tm_2bands(index)
+  R   (index) =     R_2bands(index)
+  demc(index) =  demc_2bands(index)
+  
 ; Determine ZDA and CNS indexes for compound result
   ZDA   = where(demc eq -999.)
   CNS   = where(demc ne -999.  AND R gt R_th_comp)
-
-
+  TNI   = where(demc ne -999.  AND R lt R_th_comp)
+  
   IF keyword_set(write) then begin
      N_e(CNS) = -666.
      Tm (CNS) = -666.

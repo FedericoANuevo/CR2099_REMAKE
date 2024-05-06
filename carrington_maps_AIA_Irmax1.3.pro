@@ -13,7 +13,9 @@ pro carrington_maps,NFS=NFS,write=write
 ; Directory where is DEMT file  
   dir  =root_dir+'DATA/ldem_files/'
 ; DEMT file and suffix for figs file-name
- file ='LDEM.CR2099_aia_Hollow_3Bands_Irmax1.3_gauss1_lin_Norm-median_singlStart'  & suffix = 'CR2099_AIA_3Bands_fovT'
+  file ='LDEM.CR2099_aia_Hollow_3Bands_Irmax1.3_gauss1_lin_Norm-median_singlStart'  & suffix = 'CR2099_AIA_3Bands_Irmax1.3' 
+; Grid parameters
+  rmin = 1.0 & rmax= 1.35 & Irmin = 1.02 & Irmax = 1.3
 
 
 ; Read the DEMT file  
@@ -49,12 +51,16 @@ pro carrington_maps,NFS=NFS,write=write
      Rsat (CNS)= R_th
   endif
 
-; Range to heights to plot 
-  r0A     = [1.035,1.105,1.145,1.155,1.235,1.295]
+; Range to heights to plot
+;  r0A     = [1.105,1.155,1.195]
+;  maxA_Ne = [2.5,2.0,1.5]
+  r0A     = [1.205,1.225,1.245]
+  maxA_Ne = [1.5  ,1.25  ,1.0] 
+; r0A     = [1.035,1.105,1.145,1.155,1.235,1.295]
 ; r0A     = [1.155,1.205,1.245]
 ; min and max values to N_e plots  
   minA_Ne = (r0A*0.+1.E-6)
-  maxA_Ne = [3.5  ,2.5 ,2.0 ,2.0 ,1.5 , 1.0] 
+; maxA_Ne = [3.5  ,2.5 ,2.0 ,2.0 ,1.5 , 1.0] 
 ; maxA_Ne = [2.5  ,1.5  ,1.0 ]/1.5
 ; min and max values to T_m plots  
   minA_Te = r0A*0. + 0.5
@@ -62,11 +68,11 @@ pro carrington_maps,NFS=NFS,write=write
 
   
 ; Make the lat-lon maps for N_e, T_m, and Score R with x-tools routines
-  xdisplay,map=Nesat,file='Ne_'+suffix,nr=nr,nt=nth,rmin=1.0,rmax=1.35,r0A=r0A,win=0, clrtbl= 25,$
+  xdisplay,map=Nesat,file='Ne_'+suffix,nr=nr,nt=nth,rmin=rmin,rmax=rmax,r0A=r0A,win=0, clrtbl= 25,$
            titulo='Ne [10!U8!Ncm!U-3!N]', units=1.e8, minA=minA_Ne, maxA=maxA_Ne, /add_bw
-  xdisplay,map=tmsat,file='Tm_'+suffix,nr=nr,nt=nth,rmin=1.0,rmax=1.35,r0A=r0A,win=0, clrtbl= 25,$
+  xdisplay,map=tmsat,file='Tm_'+suffix,nr=nr,nt=nth,rmin=rmin,rmax=rmax,r0A=r0A,win=0, clrtbl= 25,$
            titulo='Tm [MK]',units=1.e6, minA=minA_Te, maxA=maxA_Te, /add_bw
-  xdisplay,map=Rsat, file='R_' +suffix,nr=nr,nt=nth,rmin=1.0,rmax=1.35,r0A=r0A,win=0, clrtbl= 12,$
+  xdisplay,map=Rsat, file='R_' +suffix,nr=nr,nt=nth,rmin=rmin,rmax=rmax,r0A=r0A,win=0, clrtbl= 12,$
            titulo='R',minA=(r0A*0.+1.E-6), maxA=(r0A*0.+0.25) ;,/add_bw
 
    

@@ -1,0 +1,5 @@
+!PATH = Expand_Path('+/data1/work/dem') + ':' + !PATH
+	
+.r ldem_wrapper_aia_cr2099_fov_experiments.pro
+.r ldem_wrapper_aia_cr2099_fov_experiments.pro
+   ldem_actual_aia_Irmax_1_2

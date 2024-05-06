@@ -53,13 +53,21 @@ pro FRANKENSTEIN_RATIO,WRITE=WRITE
 
 
 ; Assign filter-ratio results where 3Bands has CNS.
-  suffix = 'CR2099_compound2'
+  suffix = 'CR2099_AIA_compound2'
   index = where (demc_3bands ne -999. AND R_3bands gt R_th AND Ne_ratio ne -666.)
   N_e (index) =    Ne_ratio(index)
   Tm  (index) =    Te_ratio(index)
   R   (index) =    +1.e-7
   demc(index) =    +666.
+  index = where(Tm_3bands gt 0.5e6 and Tm_3bands lt 0.55e6)
+  N_e (index) =    Ne_ratio(index)
+  Tm  (index) =    Te_ratio(index)
+  R   (index) =    +1.e-7
+  demc(index) =    +666.
 
+
+
+  
 
 ; Determine ZDA and CNS indexes for compound result
   ZDA   = where(demc eq -999.)

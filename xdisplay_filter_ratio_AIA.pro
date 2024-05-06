@@ -27,7 +27,7 @@ pro xdisplay_filter_ratio
   xread,file=file_Ne,nr=nr,nt=nt,np=np,map=Ne_ratio,dir=dirDEM 
   xread,file=file_Te,nr=nr,nt=nt,np=np,map=Te_ratio,dir=dirDEM
 
-  r0A     = [1.025,1.105,1.245]  
+  r0A     = [1.035,1.105,1.235]  
   minA_Ne = (r0A*0.+1.E-6)
   maxA_Ne = [3.5  ,2.5  ,1.5 ]
   minA_Te = r0A*0. + 0.5
